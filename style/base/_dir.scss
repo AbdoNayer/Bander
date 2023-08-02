@@ -1,0 +1,45 @@
+// Dir RTL
+html[dir=rtl] {
+    body{
+        direction: rtl;
+        text-align: right;
+    }
+    // Click Nav
+    .click-nav {
+        left: 0;
+        border-radius: 0 20px 0 0;
+    }
+    // Media Mobile
+    @media screen and (max-width: 767px){
+        // Header
+        header{
+            ul{
+                transform: translateX(100%);
+                right: 0;
+            }
+        }
+    }
+}
+
+// Dir LTR
+html[dir=ltr] {
+    body{
+        direction: ltr;
+        text-align: left;
+    }
+    // Click Nav
+    .click-nav {
+        right: 0;
+        border-radius: 20px 0 0;
+    }
+    // Media Mobile
+    @media screen and (max-width: 767px){
+        // Header
+        header{
+            ul{
+                transform: translateX(-100%);
+                left: 0;
+            }
+        }
+    }
+}

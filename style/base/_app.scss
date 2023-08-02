@@ -1,0 +1,182 @@
+// Click Nav
+.click-nav {
+    @include positionItem(fixed, initial, 0, initial, initial, initial);
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    width: 40px;
+    justify-content: center;
+    background-color: $white;
+    width: 60px;
+    height: 60px;
+    border-radius: 0 20px 0 0;
+    .handle {
+      background: $main;
+      height: 1px;
+      width: 40px;
+      margin: 0.32em auto;
+      transition: all 350ms cubic-bezier(0.28, 0.55, 0.385, 1.65);
+      transition-timing-function: cubic-bezier(0.28, 0.55, 0.385, 1.65);
+    }
+    .closed {
+      transform: rotate(45deg);
+      width: 40px;
+      position: relative;
+      top: -5px;
+        &:nth-of-type(2) {
+            transform: rotate(-45deg);
+        }
+        &:nth-of-type(3) {
+            display: none;
+        }
+    }
+}
+
+// Section Header
+header{
+    @include positionItem(fixed, 0, initial, initial, initial, initial);
+    @include transition(0.5s);
+    z-index: 999;
+    width: 100%;
+    padding: 10px 0;
+    ul{
+        li{
+            a{
+                color: $white;
+            }
+        }
+    }
+    .logo{
+        max-width: 100px;
+    }
+    &.header-fixed{
+        background-color: $white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        animation: slideDown 0.7s;
+        ul{
+            li{
+                a{
+                    color: $main !important;
+                }
+            }
+        }
+    }
+    // Slide Down
+    @keyframes slideDown {
+        0%{
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0%);   
+        }
+    }
+    .lang{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+// Slider Home
+#sliderHome{
+    img{
+        height: 900px;
+    }
+    .overlay-fix {
+        @include positionItem(absolute, 0, initial, 0, initial, initial);
+        background-color: rgba(0,0,0,0.4);
+        .over-info{
+            width: 600px;
+            h1{
+                line-height: 60px;
+                font-size: 60px;
+            }
+        }
+    }
+    .owl-dots{
+        display: none;
+    }
+    .owl-item.active{
+        .over-info{
+            h1, p{
+                transition: 1s;
+                animation-name: translateInfo;
+                animation-fill-mode: both;
+            }
+            h1{
+                animation-duration: 1s;
+                animation-delay: 1s;
+            }
+            p{
+                animation-duration: 2s;
+                animation-delay: 2s;
+            }
+        }
+    }
+    @keyframes translateInfo {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          visibility: initial;
+          transform: translateY(0px);
+        }
+    }
+}
+
+// About
+.blocks-about{
+    .block-about{
+        width: 240px;
+        height: 240px;
+        margin: 10px;
+        text-align: center;
+        transform: rotate(45deg);
+        .block-view{
+            transform: rotate(-45deg);
+            background-color: #FFF;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            p{
+                font-size: 12px;
+            }
+            .ic-in{
+                width: 55px;
+                height: 55px;
+                background-color: #f1f1f1;
+                i{
+                    color: $main;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .sec-block{
+        &:nth-child(2){
+            .block-about{
+                position: relative;
+                left: -80px;
+            }
+        }
+        &:nth-child(3){
+            .block-about{
+                position: relative;
+                left: -30px;
+            }
+        }
+    }
+}
+
+
+
+
