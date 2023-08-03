@@ -40,11 +40,11 @@ $(document).ready(function () {
     $(document).on("click", "header ul li a",function(e) {
         $('html, body').animate({
             scrollTop: $('#' + $(this).data('value')).offset().top - 100
-        }, 1000);
+        }, 50);
         e.preventDefault();
         if ($(window).width() < 990) {
             $(".handle").toggleClass("closed");
-            $("header").toggleClass("back");
+            $("header ul").toggleClass("back");
             $(".overlay").toggleClass("back");
          }
     });
