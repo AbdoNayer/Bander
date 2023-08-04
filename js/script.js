@@ -57,7 +57,7 @@ $(document).ready(function () {
         $("body").toggleClass("overflow-hidden");
     });
 
-    // Slider Skills
+    // Slider Home
     $('#sliderHome').owlCarousel({
         loop:true,
         margin:0,
@@ -82,6 +82,35 @@ $(document).ready(function () {
             },
             1000:{
                 items:1
+            }
+        }
+    });
+
+    // Slider Clients
+    $('#sliderClients').owlCarousel({
+        loop:true,
+        margin:0,
+        center:true,
+        autoplay:true,
+        autoplayTimeout: 7000,
+        smartSpeed: 1000,
+        animateOut: 'fadeOut',
+        dragEndSpeed: 7000,
+        pagination : false,
+        nav:false,
+        navText: [
+            '<i class="icon-arrow-left"></i>',
+            '<i class="icon-arrow-right"></i>'
+        ],
+        responsive:{
+            0:{
+                items:1
+            },
+            900:{
+                items:3
+            },
+            1000:{
+                items:5
             }
         }
     });

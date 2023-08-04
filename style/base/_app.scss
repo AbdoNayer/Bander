@@ -213,6 +213,134 @@ header{
     }
 }
 
+// Services
+.section-services{
+    .nav{
+        .nav-item{
+            button{
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+                .over-text{
+                    @include positionItem(absolute, 0, initial, 0, initial, initial);
+                    background-color: rgba(0,0,0,0.6);
+                    color: $white;
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+    .tab-content{
+        .tab-pane{
+            .block-tab{
+                max-width: 800px;
+                padding: 30px 85px 30px 10px;
+                margin-top: 100px !important;
+                &::after{
+                    content: "";
+                    @include positionItem(absolute, 0, initial, 0, initial, initial);
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    border-radius: 10px;
+                }
+                .img-tab{
+                    width: 130px;
+                    height: 130px;
+                    border-radius: 10px;
+                    @include positionItem(absolute, 45px, initial, -55px, initial, initial);
+                }
+                .info-tab{
+                    z-index: 9;
+                    a{
+                        font-size: 12px;
+                    }
+                }
+            }
+            &.active{
+                .block-tab{
+                    &::after{
+                        animation-name: translateBox;
+                        animation-fill-mode: both;
+                        animation-duration: 0.7s;
+                        animation-delay: 0.7s;
+                    }
+                    .img-tab{
+                        animation-name: translateBoxImg;
+                        animation-fill-mode: both;
+                        animation-duration: 1s;
+                        animation-delay: 1s;
+                    }
+                    .info-tab{
+                        h4, p, a{
+                            animation-name: translateBoxInfo;
+                            animation-fill-mode: both;
+                        }
+                        h4{
+                            animation-duration: 1.3s;
+                            animation-delay: 1.3s;
+                        }
+                        p{
+                            animation-duration: 1.6s;
+                            animation-delay: 1.6s;
+                        }
+                        a{
+                            animation-duration: 1.9s;
+                            animation-delay: 1.9s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @keyframes translateBox {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          width: 0%;
+        }
+        to {
+          opacity: 1;
+          visibility: initial;
+          width: 100%;
+        }
+    }
+    @keyframes translateBoxImg {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          visibility: initial;
+          transform: translateX(0px);
+        }
+    }
+    @keyframes translateBoxInfo {
+        from {
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          visibility: initial;
+          transform: translateY(0px);
+        }
+    }
+}
+
+// Section Clients
+.section-clients{
+    .sliderClients{
+        img{
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+    }
+}
 
 
 

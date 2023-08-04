@@ -71,27 +71,11 @@ button {
   border: 0;
   cursor: pointer;
 }
-
-.btn-button {
-  border-radius: 3px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  border-radius: 5px;
-}
-.btn-button:hover {
+button:hover {
   transform: scale(0.9);
-  border: 1px solid #FFF !important;
+  border: 1px solid #fdb713 !important;
   background-color: #FFF !important;
   color: #fdb713 !important;
-}
-
-.btn-default {
-  border: 1px solid #fdb713 !important;
-  background-color: #fdb713 !important;
-  color: #FFF !important;
 }
 
 ::-moz-selection {
@@ -109,12 +93,13 @@ button {
   color: #FFF;
 }
 
-.style-form, textarea, input {
-  border: 1px solid #FFF;
-  color: #FFF;
-  background-color: transparent;
+input {
   width: 100%;
   padding: 10px 20px;
+  border: 1px solid #fdb713;
+  color: #fdb713;
+  background-color: #FFF;
+  height: 50px;
   font-size: 14px;
   border-radius: 5px;
   font-weight: bold;
@@ -124,13 +109,21 @@ button {
   -webkit-transition: all 0.5s ease-in-out;
 }
 
-input {
-  height: 50px;
-}
-
 textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #fdb713;
+  color: #fdb713;
+  background-color: #FFF;
+  font-size: 14px;
   resize: none;
   min-height: 210px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
 }
 
 ::-webkit-input-placeholder,
@@ -579,12 +572,141 @@ header .lang {
   left: -30px;
 }
 
+.section-services .nav .nav-item button {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+.section-services .nav .nav-item button .over-text {
+  position: absolute;
+  top: 0;
+  bottom: initial;
+  right: 0;
+  left: initial;
+  transform: initial;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+  font-size: 21px;
+}
+.section-services .tab-content .tab-pane .block-tab {
+  max-width: 800px;
+  padding: 30px 85px 30px 10px;
+  margin-top: 100px !important;
+}
+.section-services .tab-content .tab-pane .block-tab::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: initial;
+  right: 0;
+  left: initial;
+  transform: initial;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+.section-services .tab-content .tab-pane .block-tab .img-tab {
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+  position: absolute;
+  top: 45px;
+  bottom: initial;
+  right: -55px;
+  left: initial;
+  transform: initial;
+  margin: auto;
+}
+.section-services .tab-content .tab-pane .block-tab .info-tab {
+  z-index: 9;
+}
+.section-services .tab-content .tab-pane .block-tab .info-tab a {
+  font-size: 12px;
+}
+.section-services .tab-content .tab-pane.active .block-tab::after {
+  animation-name: translateBox;
+  animation-fill-mode: both;
+  animation-duration: 0.7s;
+  animation-delay: 0.7s;
+}
+.section-services .tab-content .tab-pane.active .block-tab .img-tab {
+  animation-name: translateBoxImg;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+.section-services .tab-content .tab-pane.active .block-tab .info-tab h4, .section-services .tab-content .tab-pane.active .block-tab .info-tab p, .section-services .tab-content .tab-pane.active .block-tab .info-tab a {
+  animation-name: translateBoxInfo;
+  animation-fill-mode: both;
+}
+.section-services .tab-content .tab-pane.active .block-tab .info-tab h4 {
+  animation-duration: 1.3s;
+  animation-delay: 1.3s;
+}
+.section-services .tab-content .tab-pane.active .block-tab .info-tab p {
+  animation-duration: 1.6s;
+  animation-delay: 1.6s;
+}
+.section-services .tab-content .tab-pane.active .block-tab .info-tab a {
+  animation-duration: 1.9s;
+  animation-delay: 1.9s;
+}
+@keyframes translateBox {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    width: 0%;
+  }
+  to {
+    opacity: 1;
+    visibility: initial;
+    width: 100%;
+  }
+}
+@keyframes translateBoxImg {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: initial;
+    transform: translateX(0px);
+  }
+}
+@keyframes translateBoxInfo {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: initial;
+    transform: translateY(0px);
+  }
+}
+
+.section-clients .sliderClients img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media screen and (max-width: 767px) {
   .click-nav {
     display: flex;
   }
   .click-nav .closed:nth-of-type(2) {
     margin: -6px;
+  }
+  .w-50, .w-75 {
+    width: 100% !important;
   }
   header ul {
     flex-direction: column;
@@ -620,6 +742,42 @@ header .lang {
   #sliderHome .overlay-fix .over-info h1 {
     line-height: 0px;
     font-size: 40px;
+  }
+  .section-about .blocks-about .block-about {
+    width: 240px;
+    height: 240px;
+    transform: initial;
+  }
+  .section-about .blocks-about .block-about .block-view {
+    transform: initial;
+    width: auto;
+    height: auto;
+  }
+  .section-about .blocks-about .sec-block:nth-child(2) .block-about {
+    left: 0;
+  }
+  .section-about .blocks-about .sec-block:nth-child(3) .block-about {
+    left: 0;
+  }
+  .section-services .nav .nav-item button {
+    width: 110px;
+    height: 110px;
+  }
+  .section-services .nav .nav-item button .over-text {
+    font-size: 12px;
+  }
+  .section-services .tab-content .tab-pane .block-tab {
+    max-width: 800px;
+    padding: 15px 10px 15px 10px;
+    margin-top: 100px !important;
+    flex-direction: column;
+    text-align: center;
+  }
+  .section-services .tab-content .tab-pane .block-tab .img-tab {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 20px;
   }
 }
 html[dir=rtl] body {

@@ -10,6 +10,10 @@
         }
     }
 
+    .w-50, .w-75{
+        width: 100% !important;
+    }
+
     // Header
     header{
         ul{
@@ -42,6 +46,66 @@
                 h1{
                     line-height: 0px;
                     font-size: 40px;
+                }
+            }
+        }
+    }
+
+    // About
+    .section-about{
+        .blocks-about{
+            .block-about{
+                width: 240px;
+                height: 240px;
+                transform: initial;
+                .block-view{
+                    transform: initial;
+                    width: auto;
+                    height: auto;
+                }
+            }
+            .sec-block{
+                &:nth-child(2){
+                    .block-about{
+                        left: 0;
+                    }
+                }
+                &:nth-child(3){
+                    .block-about{
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Services
+    .section-services{
+        .nav{
+            .nav-item{
+                button{
+                    width: 110px;
+                    height: 110px;
+                    .over-text{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                .block-tab{
+                    max-width: 800px;
+                    padding: 15px 10px 15px 10px;
+                    margin-top: 100px !important;
+                    flex-direction: column;
+                    text-align: center;
+                    .img-tab{
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                        margin-bottom: 20px;
+                    }
                 }
             }
         }

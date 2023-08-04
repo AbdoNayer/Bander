@@ -74,28 +74,12 @@ button{
   background-color: transparent;
   border: 0;
   cursor: pointer;
-}
-
-.btn-button{
-  border-radius: 3px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-  border-radius: 5px;
   &:hover{
     transform: scale(0.9);
-    border: 1px solid $white !important;
+    border: 1px solid $main !important;
     background-color: $white !important;
     color: $main !important;
   }
-}
-
-.btn-default{
-  border: 1px solid $main !important;
-  background-color: $main !important;
-  color: $white !important;
 }
 
 // selection
@@ -112,27 +96,31 @@ button{
 
 // Style Form Validation
 
-.style-form{
-  border: 1px solid $white;
-  color: $white;
-  background-color: transparent;
+input{
   width: 100%;
   padding: 10px 20px;
+  border: 1px solid $main;
+  color: $main;
+  background-color: $white;
+  height: 50px;
   font-size: 14px;
   border-radius: 5px;
   font-weight: bold;
   @include transition(0.5s);
 }
 
-input{
-  height: 50px;
-  @extend .style-form;
-}
-
 textarea{
-  @extend .style-form;
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid $main;
+  color: $main;
+  background-color: $white;
+  font-size: 14px;
   resize: none;
   min-height: 210px;
+  border-radius: 5px;
+  font-weight: bold;
+  @include transition(0.5s);
 }
 
 ::-webkit-input-placeholder,
