@@ -20,13 +20,17 @@
             flex-direction: column;
             width: 250px !important;
             height: 100%;
-            background-color: $second;
+            background-color: $white;
             @include positionItem(fixed, 0, initial, initial, initial, initial);
             @include transition(0.5s);
             padding-top: 40px;
             li{
                 margin: 20px 0;
                 width: 100%;
+                a{
+                    font-weight: bold;
+                    color: $main !important;
+                }
             }
         }
         .drop-down{
@@ -38,16 +42,22 @@
             }
         }
     }
+    
     // Slider Home
-    #sliderHome{
-        .overlay-fix {
-            .over-info{
-                width: 100%;
-                h1{
-                    line-height: 0px;
-                    font-size: 40px;
+    .main-body-slider{
+        #sliderHome{
+            .overlay-fix {
+                .over-info{
+                    width: 100%;
+                    h1{
+                        line-height: 0px;
+                        font-size: 40px;
+                    }
                 }
             }
+        }
+        svg{
+            bottom: -1px;
         }
     }
 
@@ -96,14 +106,14 @@
             .tab-pane{
                 .block-tab{
                     max-width: 800px;
-                    padding: 15px 10px 15px 10px;
+                    padding: 15px 10px 15px 10px !important;
                     margin-top: 100px !important;
                     flex-direction: column;
                     text-align: center;
                     .img-tab{
                         position: relative;
                         top: 0;
-                        right: 0;
+                        right: 0 !important;
                         margin-bottom: 20px;
                     }
                 }

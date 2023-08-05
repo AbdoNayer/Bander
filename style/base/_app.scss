@@ -7,12 +7,12 @@
     z-index: 999;
     width: 40px;
     justify-content: center;
-    background-color: $white;
+    background-color: $main;
     width: 60px;
     height: 60px;
     border-radius: 0 20px 0 0;
     .handle {
-      background: $main;
+      background: $white;
       height: 1px;
       width: 40px;
       margin: 0.32em auto;
@@ -30,6 +30,19 @@
         &:nth-of-type(3) {
             display: none;
         }
+    }
+}
+
+// Shap Font
+.shap-font{
+    margin-bottom: 40px;
+    &:after {
+        content: "";
+        @include positionItem(absolute, initial, -15px, initial, initial, initial);
+        background-color: $main;
+        width: 70px;
+        height: 3px;
+        border-radius: 4px;
     }
 }
 
@@ -101,70 +114,66 @@ header{
 }
 
 // Slider Home
-#sliderHome{
-    img{
-        height: 900px;
-    }
-    .overlay-fix {
-        @include positionItem(absolute, 0, initial, 0, initial, initial);
-        background-color: rgba(0,0,0,0.4);
-        .over-info{
-            width: 600px;
-            h1{
-                line-height: 60px;
-                font-size: 60px;
+.main-body-slider{
+    #sliderHome{
+        img{
+            height: 900px;
+        }
+        .overlay-fix {
+            @include positionItem(absolute, 0, initial, 0, initial, initial);
+            background-color: rgba(0,0,0,0.4);
+            .over-info{
+                width: 600px;
+                h1{
+                    line-height: 60px;
+                    font-size: 60px;
+                }
+            }
+        }
+        .owl-item.active{
+            .over-info{
+                h1, p{
+                    transition: 1s;
+                    animation-name: translateInfo;
+                    animation-fill-mode: both;
+                }
+                h1{
+                    animation-duration: 1s;
+                    animation-delay: 1s;
+                }
+                p{
+                    animation-duration: 2s;
+                    animation-delay: 2s;
+                }
+            }
+        }
+        @keyframes translateInfo {
+            from {
+              opacity: 0;
+              visibility: hidden;
+              transform: translateY(50px);
+            }
+            to {
+              opacity: 1;
+              visibility: initial;
+              transform: translateY(0px);
             }
         }
     }
-    .owl-dots{
-        display: none;
+    svg{
+        position: absolute;
+        bottom: -45px;
+        width: 100%;
+        right: 0;
+        z-index: 9;
     }
-    .owl-item.active{
-        .over-info{
-            h1, p{
-                transition: 1s;
-                animation-name: translateInfo;
-                animation-fill-mode: both;
-            }
-            h1{
-                animation-duration: 1s;
-                animation-delay: 1s;
-            }
-            p{
-                animation-duration: 2s;
-                animation-delay: 2s;
-            }
-        }
-    }
-    @keyframes translateInfo {
-        from {
-          opacity: 0;
-          visibility: hidden;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          visibility: initial;
-          transform: translateY(0px);
-        }
-    }
+}
+.owl-dots{
+    display: none;
 }
 
 // About
 .section-about{
-    .info-head{
-        h2{
-            margin-bottom: 40px;
-            &:after {
-                content: "";
-                @include positionItem(absolute, initial, -15px, 0, initial, initial);
-                background-color: $main;
-                width: 70px;
-                height: 3px;
-                border-radius: 4px;
-            }
-        }
-    }
     .blocks-about{
         .block-about{
             width: 240px;
@@ -234,7 +243,6 @@ header{
         .tab-pane{
             .block-tab{
                 max-width: 800px;
-                padding: 30px 85px 30px 10px;
                 margin-top: 100px !important;
                 &::after{
                     content: "";
@@ -248,7 +256,7 @@ header{
                     width: 130px;
                     height: 130px;
                     border-radius: 10px;
-                    @include positionItem(absolute, 45px, initial, -55px, initial, initial);
+                    @include positionItem(absolute, 45px, initial, initial, initial, initial);
                 }
                 .info-tab{
                     z-index: 9;
@@ -333,11 +341,114 @@ header{
 
 // Section Clients
 .section-clients{
+    .container{
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            border-bottom: 80px solid #fff;
+            border-right: 80px solid #f1f1f1;
+            width: 0;
+            z-index: 9;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 10px;
+            border-top: 80px solid #fff;
+            border-left: 80px solid #f1f1f1;
+            width: 0;
+            z-index: 9;
+        }
+    }
     .sliderClients{
-        img{
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
+        background-color: #f1f1f1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0px;
+            border-top: 80px solid #fff;
+            border-right: 80px solid #f1f1f1;
+            width: 0;
+            z-index: 9;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0px;
+            border-bottom: 80px solid #fff;
+            border-left: 80px solid #f1f1f1;
+            width: 0;
+        }
+        a{
+            display: block;
+            img{
+                width: 110px;
+                height: 110px;
+                object-fit: contain;
+                filter: grayscale(100%);
+                @include transition(0.5s);
+                &:hover{
+                    filter: grayscale(0);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+// Section Contact
+.section-contact{
+    svg{
+        position: absolute;
+        bottom: -48px;
+        right: 0;
+    }
+}
+
+// Footer
+footer{
+    background-color: #f1f1f1;
+    .list-footer{
+        .lis-link-footer{
+            li{
+                padding: 0 20px;
+                &::after{
+                    content: "";
+                    @include positionItem(absolute, 12px, initial, 5px, initial, rotate(45deg));
+                    width: 7px;
+                    height: 7px;
+                    background-color: $main;
+                }
+            }
+        }
+        .socail{
+            li{
+                width: 45px;
+                height: 45px;
+                border: 1px solid $main;
+                border-radius: 50%;
+                @include transition(0.5s);
+                a{
+                    width: 35px;
+                    height: 35px;
+                    background-color: $main;
+                    border-radius: 50%;
+                    i{
+                        font-size: 13px;
+                    }
+                }
+                &:hover{
+                    background-color: $main;
+                    a{
+                        transform: scale(1.1);
+                    }
+                }
+            }
         }
     }
 }

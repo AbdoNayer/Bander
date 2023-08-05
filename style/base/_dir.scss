@@ -9,6 +9,25 @@ html[dir=rtl] {
         left: 0;
         border-radius: 0 20px 0 0;
     }
+    // Shap Font
+    .shap-font{
+        &:after {
+            right: 0;
+        }
+    }
+    // Services
+    .section-services{
+        .tab-content{
+            .tab-pane{
+                .block-tab{
+                    padding: 30px 85px 30px 10px;
+                    .img-tab{
+                        right: -55px;
+                    }
+                }
+            }
+        }
+    }
     // Media Mobile
     @media screen and (max-width: 767px){
         // Header
@@ -31,6 +50,25 @@ html[dir=ltr] {
     .click-nav {
         right: 0;
         border-radius: 20px 0 0;
+    }
+    // Shap Font
+    .shap-font{
+        &:after {
+            left: 0;
+        }
+    }
+    // Services
+    .section-services{
+        .tab-content{
+            .tab-pane{
+                .block-tab{
+                    padding: 30px 10px 30px 85px;
+                    .img-tab{
+                        left: -55px;
+                    }
+                }
+            }
+        }
     }
     // Media Mobile
     @media screen and (max-width: 767px){
