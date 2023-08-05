@@ -760,6 +760,11 @@ header .lang {
   transform: scale(1.1);
 }
 
+.section-twiiter .over-twitter {
+  height: 600px;
+  overflow-y: auto;
+}
+
 .section-contact svg {
   position: absolute;
   bottom: -48px;
