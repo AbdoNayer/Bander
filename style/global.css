@@ -502,7 +502,6 @@ header .lang {
   width: 600px;
 }
 .main-body-slider #sliderHome .overlay-fix .over-info h1 {
-  line-height: 60px;
   font-size: 60px;
 }
 .main-body-slider #sliderHome .owl-item.active .over-info h1, .main-body-slider #sliderHome .owl-item.active .over-info p {
