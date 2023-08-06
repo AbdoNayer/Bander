@@ -23,10 +23,15 @@ $(document).ready(function () {
     $(window).scroll(function () {
         if ($(window).width() > 767) {
             if($(this).scrollTop() > 30){
-                $('header').addClass('header-fixed')
+                $('header').addClass('header-fixed');
             }else{
                 $('header').removeClass('header-fixed')
             }
+        }
+        if($(this).scrollTop() > 70){
+            $('.fix-up').addClass('d-flex');
+        }else{
+            $('.fix-up').removeClass('d-flex');
         }
     });
 
@@ -36,10 +41,15 @@ $(document).ready(function () {
         $(this).addClass('active').siblings().removeClass('active');
     });
 
+    // Click Scroll Up Page
+    $(document).on("click", ".fix-up",function() {
+        $(window).scrollTop(0);
+    });
+
     // Scroll For Section
     $(document).on("click", "header ul li a, .list-footer ul li a",function(e) {
         $('html, body').animate({
-            scrollTop: $('#' + $(this).data('value')).offset().top - 100
+            scrollTop: $('#' + $(this).data('value')).offset().top - 150
         }, 50);
         e.preventDefault();
         if ($(window).width() < 990) {
