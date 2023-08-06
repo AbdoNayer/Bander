@@ -403,6 +403,10 @@ header{
     .over-twitter{
         height: 600px;
         overflow-y: auto;
+        .over-twitter-in{ 
+            height: 500px;
+            overflow-y: auto;
+        }
     }
 }
 
