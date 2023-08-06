@@ -251,6 +251,11 @@ input:focus, textarea:focus {
   width: 50%;
   height: 100%;
 }
+.loader img {
+  max-width: 100px;
+  position: relative;
+  z-index: 9;
+}
 .loader .spinner {
   position: absolute;
   top: 0;
