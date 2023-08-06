@@ -267,6 +267,7 @@ input:focus, textarea:focus {
   max-width: 100px;
   position: relative;
   z-index: 9;
+  border-radius: 10px;
 }
 .loader .spinner .item {
   width: 30px;
