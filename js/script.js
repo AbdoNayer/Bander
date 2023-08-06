@@ -6,7 +6,7 @@ $(window).on('load', function () {
      $(".spinner").delay(500).fadeOut(400, function() {
         document.documentElement.style.setProperty('--backRightIn', 'translateX(100%)')
         document.documentElement.style.setProperty('--backLefttIn', 'translateX(-100%)')
-        $(".loader").fadeOut(500);
+        $(".loader").fadeOut(300);
     });
     $("body").css("overflow-y", "auto");
 
