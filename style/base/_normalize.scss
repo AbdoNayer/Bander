@@ -206,7 +206,7 @@ input, textarea {
       content: "";
       @include positionItem(absolute, 0, initial, 0, initial, var(--backRightIn));
       @include transition(1s);
-      background: $main;
+      background: $white;
       width: 50%;
       height: 100%;
   }
@@ -214,7 +214,7 @@ input, textarea {
       content: "";
       @include positionItem(absolute, 0, initial, initial, 0, var(--backLefttIn));
       @include transition(1s);
-      background: $main;
+      background: $white;
       width: 50%;
       height: 100%;
   }
