@@ -264,7 +264,7 @@ input:focus, textarea:focus {
   z-index: 9;
 }
 .loader .spinner img {
-  max-width: 100px;
+  max-width: 150px;
   position: relative;
   z-index: 9;
   border-radius: 10px;
