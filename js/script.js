@@ -47,7 +47,7 @@ $(document).ready(function () {
     });
 
     // Scroll For Section
-    $(document).on("click", "header ul li a, .list-footer ul li a",function(e) {
+    $(document).on("click", "header ul li a, .list-footer ul li a, .info-tab a",function(e) {
         $('html, body').animate({
             scrollTop: $('#' + $(this).data('value')).offset().top - 150
         }, 50);
